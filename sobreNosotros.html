@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Business</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <h2>
+      <i class="fas fa-briefcase"></i>
+      Business Online
+    </h2>
+    <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+    <ul class="desktop">
+      <li><a href="sobreNosotros.html">Sobre Nosotros</a></li>
+      <li><a href="index.html">Servicios</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <ul class="mobile">
+      <li><a href="sobreNosotros.html">Sobre Nosotros</a></li>
+      <li><a href="index.html">Servicios</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+  </header>
+
+  <main class="container">
+
+  <section id="about" class="about">
+    <h2>Sobre Nosotros</h2>
+    <p>En Digital Business nos comprometemos con la comodidad y satisfacción de nuestros clientes, ofreciendo servicios digitales confiables y de calidad.</p>
+  </section>
+
+  <section class="images">
+    <img src="recargas.png" alt="Recargas">
+    <img src="airbnb.png" alt="Airbnb">
+    <img src="uber.png" alt="Uber">
+    <img src="turismo.png" alt="Turismo">
+  </section>
+</main>
+
+  <script>
+    function toggleMenu() {
+      const mobileMenu = document.querySelector('.navbar ul.mobile');
+      mobileMenu.classList.toggle('show');
+    }
+  </script>
+
+</body>
