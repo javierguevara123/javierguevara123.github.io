@@ -1,0 +1,233 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #1c1c2b, #34485e);
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('fondoPrincipal2.jpg');
+    background-size: cover; /* La imagen cubre toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Esto hace que la imagen de fondo no se mueva al hacer scroll */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 100vh; /* Asegura que el fondo cubra toda la pantalla */
+    margin: 0;
+}
+
+.navbar {
+    background: #141e30;
+    padding: 15px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.container {
+    max-width: 90%;
+    width: 450px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #2e2e42;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    color: #ffc107;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.chip-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.chip-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #3c4451;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.chip-image img {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.chip-image img:hover {
+    transform: scale(1.05);
+}
+
+.image-navigation button {
+    background: transparent;
+    border: none;
+    color: #ffc107;
+    font-size: 28px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.image-navigation button:hover {
+    background-color: rgba(255, 193, 7, 0.3);
+    border-radius: 5px;
+}
+
+.quantity-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 5px 10px;
+    background-color: #2c2f38;
+}
+
+.quantity-controls .control-button {
+    background-color: #ffc107;
+    border: none;
+    color: #1c1c2b;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-controls .control-button:hover {
+    background-color: #ffb200;
+}
+
+.quantity-input {
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    font-size: 24px;
+    border: none;
+    background-color: #e0a800;
+    color: #1c1c2b;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.quantity-input:focus {
+    outline: none;
+    background-color: #d69800;
+}
+
+button#requestButton {
+    background: #ffc107;
+    color: #1c1c2b;
+    padding: 15px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+button#requestButton:hover {
+    background: #e0a800;
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 12px;
+    }
+}
+
+.navbar-links {
+    background-color: #18253d;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centra los elementos de la lista */
+}
+
+.navbar-links li {
+    margin-right: 35px;
+
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center; /* Alinea el icono y el texto en la misma línea */
+    transition: 0.3s;
+    padding: 5px;
+}
+
+.navbar-links a:hover {
+    background-color: #ffc107;
+    color: #1c1c2b;
+    border-radius: 5px;
+}
+
+.navbar-icon {
+    border-radius: 15px;
+    width: 30px; /* Ajusta el tamaño del icono */
+    height: auto;
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+@media (max-width: 768px) {
+    .navbar-links ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .navbar-links li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .navbar-links a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}

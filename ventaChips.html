@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de Chips</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="stylesVentaChips.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <h2><i class="fas fa-briefcase"></i> Business Online</h2>
+    </header>
+
+    <nav class="navbar-links">
+        <ul>
+            <li><a href="#" onclick="selectChip('cnt')"><img src="iconoCnt.png" alt="Cnt" class="navbar-icon"> Cnt</a></li>
+            <li><a href="#" onclick="selectChip('movistar')"><img src="iconoMovistar.png" alt="Movistar" class="navbar-icon"> Movistar</a></li>
+            <li><a href="#" onclick="selectChip('tuenti')"><img src="iconoTuenti.png" alt="Tuenti" class="navbar-icon"> Tuenti</a></li>
+            <li><a href="#" onclick="selectChip('claro')"><img src="iconoClaro.png" alt="Claro" class="navbar-icon"> Claro</a></li>
+        </ul>
+    </nav>
+    
+    
+
+    <main class="container">
+        <section class="chip-selection">
+            <h2>Selecciona tu Chip</h2>
+            <div class="chip-container">
+                <div class="chip-image">
+                    <img id="chipImage" src="cnt_1.jpg" alt="Chip" />
+                </div>
+
+                <div class="image-navigation">
+                    <button onclick="changeImage('left')"><i class="fas fa-chevron-left"></i></button>
+                    <button onclick="changeImage('right')"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <div class="quantity-section">
+                    <label for="quantity">Cantidad de Chips:</label>
+                    <div class="quantity-controls">
+                        <button id="decreaseBtn" onclick="changeQuantity('decrease')" aria-label="Disminuir cantidad" class="control-button"><i class="fas fa-minus"></i></button>
+                        <input type="number" id="quantity" value="1" min="1" max="10" required class="quantity-input">
+                        <button id="increaseBtn" onclick="changeQuantity('increase')" aria-label="Aumentar cantidad" class="control-button"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <button id="requestButton">Solicitar Chips</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let currentImageIndex = 0;
+        const chipImages = {
+            cnt: ["cnt_1.jpg", "cnt_2.jpg"],  // Imágenes para Cnt
+            movistar: ["movistar_1.jpg", "movistar_2.jpg"],  // Imágenes para Movistar
+            tuenti: ["tuenti_1.jpg", "tuenti_2.jpg"],  // Imágenes para Tuenti
+            claro: ["claro_1.jpg", "claro_2.jpg"]  // Imágenes para Claro
+        };
+
+        let currentChip = 'cnt';  // Valor predeterminado: Cnt
+
+        // Función para cambiar la imagen al seleccionar un chip
+        function selectChip(chip) {
+    currentChip = chip;  // Establece el chip seleccionado
+    currentImageIndex = 0;  // Resetea el índice de la imagen
+    updateChipImage();  // Actualiza la imagen mostrada
+}
+
+// Función para cambiar entre las imágenes del chip seleccionado
+function changeImage(direction) {
+    const images = chipImages[currentChip];  // Obtiene las imágenes del chip seleccionado
+    if (direction === 'left') {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    } else {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+    }
+    updateChipImage();  // Actualiza la imagen mostrada
+}
+
+// Función para actualizar la imagen de la sección "Selecciona tu Chip"
+function updateChipImage() {
+    const images = chipImages[currentChip];  // Obtiene las imágenes del chip seleccionado
+    document.getElementById("chipImage").src = images[currentImageIndex];  // Cambia la imagen
+}
+
+function changeQuantity(action) {
+    let quantity = parseInt(document.getElementById("quantity").value);
+    if (action === 'increase' && quantity < 10) {
+        document.getElementById("quantity").value = quantity + 1;
+    } else if (action === 'decrease' && quantity > 1) {
+        document.getElementById("quantity").value = quantity - 1;
+    }
+}
+
+document.getElementById("requestButton").addEventListener("click", function() {
+    const quantity = document.getElementById("quantity").value;
+    alert(`Has solicitado ${quantity} chips. ¡Gracias por tu compra!`);
+});
+
+    </script>
+
+</body>
+</html>
